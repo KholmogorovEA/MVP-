@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нейро контроль качества</title>
+    <link rel="stylesheet" href="/static/styles2.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <h1 data-text="Нейро контроль качества отдела продаж">Нейро контроль качества отдела продаж</h1>
+    <h2>Загрузите аудиозапись для анализа качества</h2>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="file">Выберите аудиофайл (wav или mp3):</label>
+        <input type="file" name="file" id="file" required><br><br>
+        
+        <label>Выберите критерии анализа:</label><br>
+        <input type="checkbox" name="criteria" value="задавал ли открытые вопросы"> Задавал ли открытые вопросы<br>
+        <input type="checkbox" name="criteria" value="работал ли с возражениями"> Работал ли с возражениями<br>
+        <input type="checkbox" name="criteria" value="придерживался ли скрипта"> Придерживался ли скрипта<br>
+        <input type="checkbox" name="criteria" value="был ли вежлив"> Был ли вежлив<br>
+        <input type="checkbox" name="criteria" value="обращался ли по имени к клиенту"> Обращался ли по имени к клиенту<br>
+        <input type="checkbox" name="criteria" value="приводил ли аргументы в пользу сотрудничества"> Приводил ли аргументы в пользу сотрудничества<br>
+        <input type="checkbox" name="criteria" value="аргументировал ли свои ответы"> Аргументировал ли свои ответы<br>
+        <input type="checkbox" name="criteria" value="ответил ли на все вопросы клиента"> Ответил ли на все вопросы клиента<br><br>
+        <input type="checkbox" name="criteria" value="возражения клиента"> возражения клиента<br><br>
+        <input type="checkbox" name="criteria" value="определить категорию звонка"> Определить категорию звонка<br><br>
+        
+        <button type="submit">Загрузить и проанализировать</button>
+    </form>
+
+    <footer class="container">
+        <a href="https://www.apple.com" target="_blank" id="apple">
+            <i class="fa fa-apple"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" id="twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="https://github.com" target="_blank" id="github">
+            <i class="fa fa-github-square"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank" id="facebook">
+            <i class="fa fa-facebook-square"></i>
+        </a>
+    </footer>
+</body>
+</html>

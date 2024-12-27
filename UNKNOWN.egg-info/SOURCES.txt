@@ -1,0 +1,14 @@
+pyproject.toml
+UNKNOWN.egg-info/PKG-INFO
+UNKNOWN.egg-info/SOURCES.txt
+UNKNOWN.egg-info/dependency_links.txt
+UNKNOWN.egg-info/top_level.txt
+app/ap.py
+app/main_page/router.py
+app/reports/router.py
+app/results/router.py
+app/tools/__init__.py
+app/tools/decorator.py
+app/tools/funcs.py
+app/tools/stt.py
+app/users/router.py

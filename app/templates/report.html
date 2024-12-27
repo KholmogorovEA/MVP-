@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчет об анализе качества</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <h1 data-text="Отчет об анализе качества">Отчет об анализе качества</h1>
+
+    <h2 class="tt">Транскрибированный текст:</h2>
+    <p class="transcript" id="transcript">{{ transcript_text }}</p>
+
+    <script>
+        const transcript = document.getElementById('transcript');
+        transcript.innerHTML = transcript.innerText
+            .split('. ')
+            .map(sentence => `<span>${sentence.trim()}.</span>`)
+            .join('');
+    </script>
+
+    <style>
+        .transcript {
+            background: linear-gradient(135deg, #1e1e2e, #2e2e3e);
+            color: #e6e6e6;
+            padding: 20px;
+            border-radius: 12px;
+            font-family: 'Courier New', Courier, monospace; /* Стилизация под текст терминала */
+            font-size: 1.2em;
+            line-height: 1.8; /* Интервал между строками */
+            text-align: justify; /* Выравнивание текста по ширине */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            word-break: break-word; /* Перенос слов для длинных текстов */
+            max-width: 800px; /* Ограничение ширины */
+            margin: 20px auto; /* Центрирование блока */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Легкая рамка */
+        }
+
+        .transcript::before {
+            content: '📜 Транскрипт:';
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+            color: #ff8c00;
+        }
+
+        .transcript span {  
+            display: block;
+            margin-bottom: 10px;
+            padding-left: 15px;
+        }   
+
+        @media (max-width: 600px) {
+            .transcript {
+                font-size: 1em;
+                padding: 15px;
+            }
+        }
+    </style>
+
+
+    <h2>Результаты анализа:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Критерий</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for criterion, description in analysis_items %}
+                <tr>
+                    <td><strong>{{ criterion }}</strong></td>
+                    <td>{{ description | default("Нет описания") }}</td> 
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">Нет данных для отображения.</td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+
+
+    <h2>Анализ VAC клиента:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Тип восприятия</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>VAC-анализ</strong></td>
+                <td>{{ analysis_vac }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Анализ VAC менеджера:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Тип восприятия</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>VAC-анализ</strong></td>
+                <td>{{ vac_manager }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Анализ VAC по схожести:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Тип восприятия</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>VAC-анализ</strong></td>
+                <td>{{ mutual_vac }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Психодиагностика</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Тип метапрограммы</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>PSY-анализ</strong></td>
+                <td>{{ psy_diagnostic_result }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Работа с возражением по системе PMHS</h3>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Отработка</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong></strong></td>
+                <td>{{ is_objections }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <footer class="container">
+        <a href="https://www.apple.com" target="_blank" id="apple">
+            <i class="fa fa-apple"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" id="twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="https://github.com" target="_blank" id="github">
+            <i class="fa fa-github-square"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank" id="facebook">
+            <i class="fa fa-facebook-square"></i>
+        </a>
+    </footer>
+    
+</body>
+
+</html>

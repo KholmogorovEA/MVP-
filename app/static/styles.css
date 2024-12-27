@@ -1,0 +1,163 @@
+/* Основной фон с градиентом и анимацией */
+body {
+    background: linear-gradient(135deg, #01010e, #12121e, #01010e);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: #c7c7d3;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Заголовок с зеркальным эффектом */
+h1 {
+    position: relative;
+    font-size: 4em;
+    font-weight: 800;
+    color: #ff8c00;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: transparent;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+    -webkit-background-clip: text; 
+    transform: rotateX(180deg);
+    opacity: 0.2;
+    transform-origin: bottom;
+    pointer-events: none;
+}
+
+.tt {
+    
+    margin-top: 4em;
+    background: linear-gradient(90deg, 
+                #923e6f, #bd5941, #cf6b08);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 8s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+    @keyframes animate {
+    0% { background-position: -500%; }
+    100% { background-position: 500%; }
+    }
+
+    /* margin-top: 100px;
+    margin-bottom: 20px;
+    color: #ff8c00; */
+
+
+/* Таблица с градиентной границей */
+table {
+    position: relative;
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 5px solid transparent;
+    background: linear-gradient(#1e1e2e, #1e1e2e),
+                conic-gradient(from var(--border-angle), #08f, #f03, #ff8c00, #08f);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: border-rotate 5s linear infinite;
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0turn;
+    inherits: false;
+}
+
+@keyframes border-rotate {
+    to { --border-angle: 1turn; }
+}
+
+table th, table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+table td {
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: none; /* Убираем ограничения на ширину */
+}
+    
+
+table thead tr {
+    background: linear-gradient(135deg, #3e3e5e, #5e5e7e);
+    color: #ffffff;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Анимация для иконок в футере */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #18191f;
+    width: 100%;
+}
+
+#apple, #twitter, #github, #facebook {
+    font-size: 4em;
+    color: #fff;
+    margin: 0 20px;
+    text-shadow: 0 0 20px #0072ff, 0 0 40px #0072ff, 0 0 60px #0072ff;
+    animation: glow 3s linear infinite;
+}
+
+#twitter { animation-delay: 0.3s; }
+#facebook { animation-delay: 0.7s; }
+#github { animation-delay: 0.1s; }
+
+@keyframes glow {
+    from { filter: hue-rotate(0deg); }
+    to { filter: hue-rotate(360deg); }
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    opacity: 0.8;
+}

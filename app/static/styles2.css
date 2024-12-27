@@ -1,0 +1,156 @@
+/* Стили для заголовков uploads */
+h1 {
+    position: relative;
+    font-size: 4em;
+    font-weight: 800;
+    color: #ff8c00;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: transparent;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+    -webkit-background-clip: text; 
+    transform: rotateX(180deg);
+    opacity: 0.2;
+    transform-origin: bottom;
+    pointer-events: none;
+}
+
+h2 {
+    margin-top: 4em;
+    background: linear-gradient(90deg, 
+                #923e6f, #bd5941, #cf6b08);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 8s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+  @keyframes animate {
+    0% { background-position: -500%; }
+    100% { background-position: 500%; }
+  }
+
+/* Стили формы */
+form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 70px auto;
+}
+
+label {
+    color: #ffffff;
+    font-size: 1.2em;
+}   
+
+input[type="file"] {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+input[type="checkbox"] {
+    margin: 10px 0;
+}
+
+button {
+    background: linear-gradient(135deg, #ff8c00, #ff5722);
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+    display: block;
+    margin: 20px auto;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff5722, #ff8c00);
+}
+
+body {
+    background: 
+        linear-gradient(135deg, #020215, #03030f, #01011d),
+        url('otdel-prodazh-02.jpg') no-repeat center center fixed; /* Путь к вашей картинке */
+    background-size: cover; /* Подгоняет изображение по размеру экрана */
+    background-attachment: fixed; /* Фиксирует изображение при прокрутке */
+    color: #c7c7d3;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Если хотите применить затемнение */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* 50% затемнение */
+    z-index: -1; /* Размещаем затемняющую маску позади контента */
+}
+
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #18191f;
+    width: 100%;
+}
+
+#apple, #twitter, #github, #facebook {
+    font-size: 4em;
+    color: #fff;
+    margin: 0 20px;
+    text-shadow: 0 0 20px #0072ff, 0 0 40px #0072ff, 0 0 60px #0072ff;
+    animation: glow 3s linear infinite;
+}
+
+#twitter { animation-delay: 0.3s; }
+#facebook { animation-delay: 0.7s; }
+#github { animation-delay: 0.1s; }
+
+@keyframes glow {
+    from { filter: hue-rotate(0deg); }
+    to { filter: hue-rotate(360deg); }
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none !important;
+    color: #fff !important;
+}
+
+footer a:hover {
+    opacity: 0.8 !important;
+}
