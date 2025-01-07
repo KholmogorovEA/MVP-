@@ -1,4 +1,4 @@
 # MVP- Нейро контроль качества работы менеджеров по продажам. 
-Дипломный проект.
+##Дипломный проект.
+### ссылка на работающий проект, swagger - https://drive.google.com/file/d/1gPkd--BUAV3XLrm4tfeFXCOwAq2Bblu8/view?usp=sharing
 
-https://drive.google.com/file/d/1GWdHd1oNYlqX69QOE59u2ePdqoaEi3AX/view?usp=sharing
